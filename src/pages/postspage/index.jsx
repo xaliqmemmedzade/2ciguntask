@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -29,13 +27,13 @@ function Posts() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-4 bg-orange-950">
-      <h1 className="text-3xl font-bold text-center mb-6">Posts</h1>
+    <div className="bg-gradient-to-r from-orange-600 via-red-600 to-purple-700 min-h-screen p-6">
+      <h1 className="text-3xl font-bold text-center mb-6 text-white">Posts</h1>
       <ul className="space-y-6">
         {posts.map(post => (
-          <li key={post.id} className="p-4 border rounded-lg shadow-md hover:shadow-xl transition-all duration-200">
+          <li key={post.id} className="p-6 bg-white border rounded-lg shadow-md hover:bg-blue-500 hover:text-white transition-all duration-300">
             <h2 className="text-xl font-semibold text-blue-600">{post.title}</h2>
-            <p className="text-white mt-2">{post.body}</p>
+            <p className="text-gray-800 mt-2">{post.body}</p>
           </li>
         ))}
       </ul>
@@ -44,6 +42,3 @@ function Posts() {
 }
 
 export default Posts;
-
-
-

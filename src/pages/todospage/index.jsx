@@ -7,24 +7,21 @@ function Todos() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    
     axios.get('https://jsonplaceholder.typicode.com/todos')
       .then(res => {
-        setTodos(res.data); 
-        setLoading(false); 
+        setTodos(res.data);
+        setLoading(false);
       })
       .catch(err => {
-        setError(err); 
-        setLoading(false);  
+        setError(err);
+        setLoading(false);
       });
   }, []);
 
-  
   if (loading) {
     return <div className="text-center text-lg font-semibold text-gray-500">Yüklenir</div>;
   }
 
-  
   if (error) {
     return <div className="text-center text-lg font-semibold text-red-500">No data {error.message}</div>;
   }
@@ -36,9 +33,9 @@ function Todos() {
         {todos.map(todo => (
           <li
             key={todo.id}
-            className="p-4 border rounded-lg shadow-md bg-blue-100 hover:shadow-xl transition-all duration-300"
+            className="p-6 border rounded-lg shadow-md bg-teal-400 hover:bg-blue-800 hover:shadow-xl  hover:scale-105 hover:text-white transition-all duration-700"
           >
-            <h2 className="text-xl font-semibold text-blue-600">{todo.title}</h2>
+            <h2 className="text-xl font-semibold text-stone-800 ">{todo.title}</h2>
           </li>
         ))}
       </ul>
@@ -47,5 +44,3 @@ function Todos() {
 }
 
 export default Todos;
-
-
